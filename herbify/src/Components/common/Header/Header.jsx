@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, MouseEvent } from 'react';
+import React, { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,20 +9,14 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import Styled from "./Header.module.scss"
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import MailIcon from '@mui/icons-material/Mail';
 import Badge from '@mui/material/Badge';
 import HerbfyLogo from "../../../assets/imgs/leave.png"
 import styles from './Header.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
-const pages = ['Home', 'about us', 'Store'];
-
 
 export const headerNavigations = [
   {
@@ -170,7 +164,7 @@ const onNavClick = (path: string) => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {headerNavigations.map((nav) => (
+              {navigations.map((nav) => (
                 <MenuItem key={nav.key} onClick={() => onNavClick(nav.path)}>
                   <Typography textAlign="center">{nav.name}</Typography>
                 </MenuItem>
@@ -209,7 +203,7 @@ const onNavClick = (path: string) => {
             Herbify
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {headerNavigations.map((nav) => (
+            {navigations.map((nav) => (
               <Typography className={styles.navText}
                 key={nav.key}
                 // onClick={handleCloseNavMenu}
