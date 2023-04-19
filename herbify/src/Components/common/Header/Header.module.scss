@@ -42,6 +42,27 @@
     background: rgb(241, 241, 241);
   
   }
+  .logo{
+    height: 2rem;
+    margin: 1rem;
+    margin-right: 4rem;
+   
+  }
+ 
+}
+@media (max-width: 450){
+  .serchbox{
+    border-radius: 2rem;
+    width: 4rem;
+    background: rgb(241, 241, 241);
+  
+  }
+  .logo{
+    height: 2rem;
+    margin: 1rem !important;
+
+   
+  }
 }
 
 
