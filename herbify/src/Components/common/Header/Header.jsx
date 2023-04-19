@@ -8,8 +8,6 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Styled from "./Header.module.scss"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -22,6 +20,7 @@ import InputBase from '@mui/material/InputBase';
 //navigations
 import { headerNavigations } from '../../../constants/constants';
 import { styled, alpha } from '@mui/material/styles';
+
 
 // export const headerNavigations = [
 //   {
@@ -80,11 +79,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const settings = ['Profile', 'Account', 'Logout'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
  
 
 /////////////////
@@ -134,17 +132,7 @@ const onNavClick = (path: string) => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
   return (
     <Box>
@@ -208,7 +196,7 @@ const onNavClick = (path: string) => {
                 horizontal: 'left',
               }}
               open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              // onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}
@@ -265,8 +253,10 @@ const onNavClick = (path: string) => {
 
 
        
-          <Box className={styles.serchbox}>
-          <Search>
+          <Box className={styles.hederRightBOX} >
+
+            <Box className={styles.serchbox}>
+            <Search>
             <SearchIconWrapper>
               <SearchIcon   color="success"  />
             </SearchIconWrapper>
@@ -275,50 +265,21 @@ const onNavClick = (path: string) => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          </Box>
-
-    
-          <IconButton size="large" aria-label="show 4 new mails" color="disabled">
+            </Box>
+<Box><IconButton size="large" aria-label="show 4 new mails" color="disabled">
               <Badge badgeContent={4} color="error">
                 <ShoppingCartIcon />
               </Badge>
-            </IconButton>
+            </IconButton></Box>
+          
+
+          </Box>
+
+    
+        
 
 
-
-          <Box sx={{ flexGrow: 0 }}>
-            
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              // anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-            
-          </Box>  
-         
+        
         </Toolbar>
       </Container>
     </AppBar>
