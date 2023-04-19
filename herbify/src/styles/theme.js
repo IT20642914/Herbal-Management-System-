@@ -1,7 +1,9 @@
+import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
 export const MUItheme = createTheme({
   typography: {
+    
     fontFamily: 'Poppins,sans-serif',
     h1: {
       fontWeight: 500,

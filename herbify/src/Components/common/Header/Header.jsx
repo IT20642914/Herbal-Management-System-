@@ -19,7 +19,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MailIcon from '@mui/icons-material/Mail';
 import Badge from '@mui/material/Badge';
 import HerbfyLogo from "../../../assets/imgs/leave.png"
-import styled from './Header.module.scss';
+import styles from './Header.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 const pages = ['Home', 'about us', 'Store'];
 
@@ -61,6 +61,7 @@ useEffect(() => {
 
 
 useEffect(() => {
+  console.log("log details")
   const currentNavigations = headerNavigations.map((nav) => {
     if (nav.path === currentPath) {
       return {
@@ -107,7 +108,7 @@ const onNavClick = (path: string) => {
     <Box>
       <Box className={Styled.box}>
       </Box>
-    <AppBar position="static">
+    <AppBar className={Styled.AppBar} position="static">
       
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -115,13 +116,14 @@ const onNavClick = (path: string) => {
           
           <Box  sx={{  display: { xs: 'none', md: 'flex' } }} >
 
-          <img src={HerbfyLogo}  className={styled.logo} alt="logo" />
+          <img src={HerbfyLogo}  className={styles.logo} alt="logo" />
         
         {/* <HerbfyLogo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}/> */}
         
           </Box>
           
           <Typography
+           className={styles.logoText}
           variant="h6"
           noWrap
           component="a"
@@ -132,7 +134,7 @@ const onNavClick = (path: string) => {
             fontFamily: 'monospace',
             fontWeight: 700,
             letterSpacing: '.3rem',
-            color: 'inherit',
+           
             textDecoration: 'none',
           }}
         >
@@ -186,9 +188,10 @@ const onNavClick = (path: string) => {
           </Box>
           <Box  sx={{
               display: { xs: 'flex', md: 'none' },
-            }}><img src={HerbfyLogo}  className={styled.logo} alt="logo" /></Box>
+            }}><img src={HerbfyLogo}  className={styles.logo} alt="logo" /></Box>
           
           <Typography
+            className={styles.logoText}
             variant="h5"
             noWrap
             component="a"
@@ -200,7 +203,6 @@ const onNavClick = (path: string) => {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
               textDecoration: 'none',
             }}
           >
@@ -208,7 +210,7 @@ const onNavClick = (path: string) => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {headerNavigations.map((nav) => (
-              <Typography
+              <Typography className={styles.navText}
                 key={nav.key}
                 // onClick={handleCloseNavMenu}
                   sx={{ mr: nav.key !== 6 ? 8 : 0, fontWeight: nav.selected ? 600 : 400 }}
@@ -221,7 +223,7 @@ const onNavClick = (path: string) => {
           </Box>
 
     
-          <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <IconButton size="large" aria-label="show 4 new mails" color="disabled">
               <Badge badgeContent={4} color="error">
                 <ShoppingCartIcon />
               </Badge>
