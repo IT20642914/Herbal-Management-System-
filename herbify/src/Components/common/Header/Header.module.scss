@@ -1,0 +1,78 @@
+@import '../../../styles/styles.scss';
+.box{
+  position: static;
+ background:linear-gradient(to bottom, #009933 0%, #00cc00 100%);
+  height: 2rem !important;
+}
+.logo{
+  height: 2rem;
+  margin: 1rem;
+ 
+}
+.navText {
+  align-items: center;
+  cursor: pointer;
+}
+// .hiringSection {
+//   display: flex;
+//   justify-content: center;
+//   background: radial-gradient(
+//     140.25% 16534.02% at 118.89% 49.43%,
+//     $dark-blue 0%,
+//     $light-blue 26.35%,
+//     $blue 67.44%,
+//     $primary-blue 100%
+//   );
+//   padding: $mini-padding;
+// }
+
+// .navSection {
+//   display: flex;
+//   justify-content: space-between;
+//   padding-left: $huge-padding;
+//   padding-right: $huge-padding;
+//   padding-top: $large-padding;
+//   padding-bottom: $smaller-padding;
+//   align-items: center;
+// }
+
+// .navItems {
+//   display: flex;
+//   height: fit-content;
+// }
+
+// .navText {
+//   align-items: center;
+//   cursor: pointer;
+// }
+
+// .downIcon {
+//   color: $primary-blue;
+//   margin-left: $micro-margin;
+//   cursor: pointer;
+// }
+
+// .logo {
+//   cursor: pointer;
+// }
+
+// @media only screen and (max-width: 1024px) {
+//   .navSection {
+//     display: flex;
+//     justify-content: space-between;
+//     padding-left: $smaller-padding;
+//     padding-right: $smaller-padding;
+//     padding-top: $smaller-padding;
+//     padding-bottom: $smaller-padding;
+//     align-items: center;
+//   }
+//   .hamburgerIcon {
+//     cursor: pointer;
+//   }
+//   .navText {
+//     font-size: $body2 !important;
+//   }
+// }
+// .DigiratinaLogo{
+//   width: 2rem;
+// }
