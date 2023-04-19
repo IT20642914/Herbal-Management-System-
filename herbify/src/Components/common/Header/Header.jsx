@@ -17,21 +17,68 @@ import Badge from '@mui/material/Badge';
 import HerbfyLogo from "../../../assets/imgs/leave.png"
 import styles from './Header.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
+import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
+//navigations
+import { headerNavigations } from '../../../constants/constants';
+import { styled, alpha } from '@mui/material/styles';
 
-export const headerNavigations = [
-  {
-    key: 1,
-    name: 'Home',
-    path: '/',
-    selected: true,
-  },
-  { key: 2, name: 'About Us', path: '/about', selected: false },
-  { key: 3, name: 'Store', path: '/store', selected: false },
+// export const headerNavigations = [
+//   {
+//     key: 1,
+//     name: 'Home',
+//     path: '/',
+//     selected: true,
+//   },
+//   { key: 2, name: 'About Us', path: '/about', selected: false },
+//   { key: 3, name: 'Store', path: '/store', selected: false },
   
-];
+// ];
 
 
+const Search = styled('div')(({ theme }) => ({
 
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginLeft: 0,
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(1),
+    width: 'auto',
+  },
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+ color:"Black",
+
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '12ch',
+      '&:focus': {
+        width: '20ch',
+      },
+    },
+  },
+}));
 
 const settings = ['Profile', 'Account', 'Logout'];
 
@@ -45,6 +92,7 @@ const [currentPath, setCurrentPath] = useState('/');
 const navigate = useNavigate();
 const [navigations, setNavigations] = useState(headerNavigations);
 const location = useLocation();
+
 
 useEffect(() => {
 
@@ -101,6 +149,7 @@ const onNavClick = (path: string) => {
   return (
     <Box>
       <Box className={Styled.box}>
+        <Typography className={Styled.boxText} > Get Your Herbales </Typography>
       </Box>
     <AppBar className={Styled.AppBar} position="static">
       
@@ -142,7 +191,7 @@ const onNavClick = (path: string) => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="red"
             >
               <MenuIcon />
             </IconButton>
@@ -163,6 +212,7 @@ const onNavClick = (path: string) => {
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}
+
             >
               {navigations.map((nav) => (
                 <MenuItem key={nav.key} onClick={() => onNavClick(nav.path)}>
@@ -170,12 +220,6 @@ const onNavClick = (path: string) => {
                 </MenuItem>
               ))}
           <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-          
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
       </MenuItem>
             </Menu>
             
@@ -214,6 +258,23 @@ const onNavClick = (path: string) => {
                 {nav.name}
               </Typography>
             ))}
+             
+          </Box>
+
+
+
+
+       
+          <Box className={styles.serchbox}>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon   color="success"  />
+            </SearchIconWrapper>
+            <StyledInputBase 
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Search>
           </Box>
 
     
@@ -226,6 +287,7 @@ const onNavClick = (path: string) => {
 
 
           <Box sx={{ flexGrow: 0 }}>
+            
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -235,7 +297,7 @@ const onNavClick = (path: string) => {
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
-              anchorEl={anchorElUser}
+              // anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: 'top',
                 horizontal: 'right',
@@ -255,7 +317,8 @@ const onNavClick = (path: string) => {
               ))}
             </Menu>
             
-          </Box>
+          </Box>  
+         
         </Toolbar>
       </Container>
     </AppBar>
