@@ -6,7 +6,9 @@ import  HomePage from './Components/HomePage/Homepage';
 import StorePage from './Components/StorePage/StorePage';
 import AbountPage from './Components/aboutPage/AbountPage';
 import { ToastContainer } from 'react-toastify';
-import { useSelector } from 'react-redux'
+import ProductDetails from './Components/common/ShoppingCart/components/ProductDetails';
+import Cart from './Components/common/ShoppingCart/Cart';
+//import { useSelector } from 'react-redux'
 function App() {
   return (
     <Router>
@@ -19,12 +21,18 @@ function App() {
       <Route path='/' element={<PublicRoute />}>
         <Route path='/store' element={<StorePage />} />
       </Route>
-
+      <Route path='/' element={<PublicRoute />}>
+      <Route  path="/product/:productId" element={<ProductDetails/>} />
+    
+      </Route>
+      <Route path='/' element={<PublicRoute />}>
+      <Route path="/cart" element={<Cart/>} />
+      </Route>
       <Route path='/' element={<PublicRoute />}>
         <Route path='/about' element={<AbountPage />} />
       </Route>
-   
-   
+
+
       {/* <Route path='*' element={<NotFound />} /> */}
     </Routes>
   </Router>
