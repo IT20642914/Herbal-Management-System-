@@ -1,8 +1,13 @@
 @import '../../../styles/styles.scss';
 .box{
   position: static;
- background:linear-gradient(to bottom, #009933 0%, #00cc00 100%);
+ background:linear-gradient(to bottom, #037e2c 0%, #02b302 100%);
   height: 2rem !important;
+  display: center;
+  text-align: center;
+}.boxText{
+ font-weight: 600 !important; 
+ color: rgb(81, 83, 78);
 }
 .logo{
   height: 2rem;
@@ -11,8 +16,61 @@
 }
 .navText {
   align-items: center;
-  cursor: pointer;
+  color: black;
+  cursor: pointer ;
 }
+.AppBar{
+  background-color: rgb(255, 255, 255) !important;
+}
+.logoText{
+  margin:1rem !important;
+  color: rgb(23, 140, 0,);
+}
+.serchbox{
+  border-radius: 2rem;
+  background: rgb(241, 241, 241);
+
+}
+.hederRightBOX{
+  display: contents !important;
+  margin: 1rem;
+}
+
+
+@media (max-width: 600px){
+  .logoText{
+  display: none !important;
+  }
+  .serchbox{
+    border-radius: 2rem;
+    background: rgb(241, 241, 241);
+  
+  }
+  .logo{
+    height: 2rem;
+    margin: 1rem;
+    margin-right: 4rem;
+   
+  }
+ 
+}
+@media (max-width: 450){
+  .serchbox{
+    border-radius: 2rem;
+    width: 4rem;
+    background: rgb(241, 241, 241);
+  
+  }
+  .logo{
+    height: 2rem;
+    margin: 1rem !important;
+
+   
+  }
+}
+
+
+
 // .hiringSection {
 //   display: flex;
 //   justify-content: center;
