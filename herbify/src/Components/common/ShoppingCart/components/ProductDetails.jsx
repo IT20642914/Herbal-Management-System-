@@ -1,11 +1,10 @@
-import { Grid } from '@mui/material'
 import React from 'react'
 
 const ProductDetails = () => {
   return (
-  <Grid container >
-    
-  </Grid>
+    <div>
+      
+    </div>
   )
 }
 

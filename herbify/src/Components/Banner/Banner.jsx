@@ -10,31 +10,16 @@ import "swiper/css/effect-coverflow";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { Autoplay, EffectCoverflow } from "swiper";
+import { Autoplay,  } from "swiper";
 
 import {
     Card,
-    CardActionArea,
     CardContent,
-    Typography,
-    Box,
     CardMedia,
   } from "@mui/material";
   
-import Bannerimg1 from '../../assets/imgs/BannerImgs/Bannerimg1.jpg';
-import Bannerimg2 from '../../assets/imgs/BannerImgs/bannerimg2.jpg';
-
 const Banner = () => {
-  const bannerImages = [
-    {
-      key: 1,
-      img: Bannerimg1,
-    },
-    {
-      key: 2,
-      img: Bannerimg2,
-    },
-  ];
+
 
   return (
     <Grid className={Styles.BannerGrid}>

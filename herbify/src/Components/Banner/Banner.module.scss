@@ -23,3 +23,14 @@ background: green !important;
     background: green !important;
     width: 1% ;
 }
+
+@media (max-width: 450){
+    .BannerGridiN2{
+        background: green !important;
+        width: 4% !important ;
+    }  
+    .BannerGridiN1{
+        width: 92% !important ;
+        
+    }
+}
