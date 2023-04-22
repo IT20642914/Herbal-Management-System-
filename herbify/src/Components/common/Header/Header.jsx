@@ -22,17 +22,6 @@ import { headerNavigations } from '../../../constants/constants';
 import { styled, alpha } from '@mui/material/styles';
 
 
-// export const headerNavigations = [
-//   {
-//     key: 1,
-//     name: 'Home',
-//     path: '/',
-//     selected: true,
-//   },
-//   { key: 2, name: 'About Us', path: '/about', selected: false },
-//   { key: 3, name: 'Store', path: '/store', selected: false },
-  
-// ];
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -94,14 +83,14 @@ const location = useLocation();
 
 useEffect(() => {
 
-  console.log(headerNavigations)
+
   setCurrentPath(location.pathname);
 }, [location]);
 
 
 
 useEffect(() => {
-  console.log("log details")
+
   const currentNavigations = headerNavigations.map((nav) => {
     if (nav.path === currentPath) {
       return {

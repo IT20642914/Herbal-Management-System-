@@ -5,7 +5,6 @@ const ProductLIts = () => {
   return (
     <div>
         ProductLIts
-
         <ProductDetails/>
     </div>
   )
