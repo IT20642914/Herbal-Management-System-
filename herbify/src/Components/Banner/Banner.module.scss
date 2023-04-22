@@ -1,11 +1,25 @@
 .BannerGrid{
+    display: flex;
    position: static;
-
+width: 100% !important;
+background: green !important;
 }
 .CardContent{
     border: none !important;
+    width: 100% !important;
+    padding-left: -4rem !important;
+    background: green !important;
 }
 .CardMedia{
     height:40rem !important;
     border: none !important;
+    
+}
+.BannerGridiN1{
+    width: 98% ;
+    
+}
+.BannerGridiN2{
+    background: green !important;
+    width: 1% ;
 }

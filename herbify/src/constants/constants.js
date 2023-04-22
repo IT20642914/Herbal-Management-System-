@@ -3,8 +3,8 @@ import image2 from '../assets/imgs/BannerImgs/bannerimg2.jpg'
 import image3 from '../assets/imgs/BannerImgs/bannerimg3.jpg'
 import image4 from '../assets/imgs/BannerImgs/bannerim4.jpg'
 import image5 from '../assets/imgs/BannerImgs/bannerim5.jpg'
-
-
+import image6 from '../assets/imgs/BannerImgs/bannerimge6.jpg'
+import image7 from '../assets/imgs/BannerImgs/bannerimg7.jpg'
 //header navigations
 export const headerNavigations = [
   {
@@ -41,7 +41,13 @@ export const BannerImages=[
     key:5,
     img: image5,
   },
-
+  {
+    key:6,
+    img: image6,
+  }, {
+    key:7,
+    img: image7,
+  },
     
 
 
