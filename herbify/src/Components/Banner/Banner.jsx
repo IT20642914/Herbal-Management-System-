@@ -6,12 +6,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
-import img1 from "../../assets/imgs/BannerImgs/Bannerimg1.jpg"
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Autoplay, EffectCoverflow } from "swiper";
- import  image from "../../assets/imgs/BannerImgs/Bannerimg1.jpg"
+
 import {
     Card,
     CardActionArea,
@@ -21,46 +21,48 @@ import {
     CardMedia,
   } from "@mui/material";
   
+import Bannerimg1 from '../../assets/imgs/BannerImgs/Bannerimg1.jpg';
+import Bannerimg2 from '../../assets/imgs/BannerImgs/bannerimg2.jpg';
+
 const Banner = () => {
+  const bannerImages = [
+    {
+      key: 1,
+      img: Bannerimg1,
+    },
+    {
+      key: 2,
+      img: Bannerimg2,
+    },
+  ];
+
   return (
-   <Grid className={Styles.BannerGrid}> 
-
-<img src={image} alt="ss" />
-
-{/* <Swiper
-              loop={false}
-              slidesPerView={12}
-              centeredSlides={false}
-              spaceBetween={20}
-              grabCursor={true}
-            //   autoplay={{
-            //     delay: 2500,
-            //     disableOnInteraction: false,
-            //   }}
-              modules={[Autoplay]}
-              className="mySwiper"
-            >
-              {" "}
-              {BannerImages.map((image) => (
-                <SwiperSlide className="swipeSlider">
-                  <Card key={image.key} className="card">
-            
-                        
-                      <CardContent className={Styles.CardContent}>
-                      <CardMedia 
-              component={LazyLoadImage}
-              image={image.img}
-              alt='sss'
-            
-              className={Styles.cardMedia}
-            />    </CardContent>
-         
-                  </Card>
-                  
-                </SwiperSlide>
-              ))}
-            </Swiper> */}
-   </Grid>
+    <Grid className={Styles.BannerGrid}>
+      <Swiper
+        loop={true}
+        slidesPerView={2}
+        centeredSlides={false}
+        spaceBetween={20}
+        grabCursor={true}
+        modules={[Autoplay]}
+        className="mySwiper"
+      >
+        {BannerImages.map((image) => (
+          <SwiperSlide key={image.key} className="swipeSlider">
+            <Card className="card">
+              <CardContent className={Styles.CardContent}>
+                <CardMedia className={Styles.CardMedia}
+                  component={LazyLoadImage}
+    
+                  image={image.img}
+                  alt={"    "}
+                />
+              </CardContent>
+            </Card>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Grid>
   )
 }
 
