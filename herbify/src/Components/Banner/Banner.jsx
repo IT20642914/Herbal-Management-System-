@@ -38,11 +38,16 @@ const Banner = () => {
 
   return (
     <Grid className={Styles.BannerGrid}>
+      <Grid className={Styles.BannerGridiN2}>
+
+      </Grid>
+      <Grid className={Styles.BannerGridiN1}>
+            
       <Swiper
         loop={true}
         slidesPerView={1}
         centeredSlides={false}
-        spaceBetween={10}
+        spaceBetween={0}
         grabCursor={true}
         autoplay={{
           delay: 2500,
@@ -66,6 +71,12 @@ const Banner = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+        
+        </Grid>
+        <Grid className={Styles.BannerGridiN2}>
+        
+        </Grid>
+    
     </Grid>
   )
 }
