@@ -1,9 +1,11 @@
 .BannerGrid{
-   
+   position: static;
+
 }
 .CardContent{
-    height: 100% !important;
+    border: none !important;
 }
 .CardMedia{
     height:40rem !important;
+    border: none !important;
 }
