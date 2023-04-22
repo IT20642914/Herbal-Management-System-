@@ -21,7 +21,7 @@ import InputBase from '@mui/material/InputBase';
 import { headerNavigations } from '../../../constants/constants';
 import { styled, alpha } from '@mui/material/styles';
 
-
+import { useSelector } from "react-redux";
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -81,11 +81,27 @@ const [navigations, setNavigations] = useState(headerNavigations);
 const location = useLocation();
 
 
+
+
+
+//////redux states
+const CartState = useSelector((state: any) => state.cart)
+
+
+
+
+
+const hanndelCartClicke= ()=>{
+  console.log("hello caryt");
+navigate("/cart")
+
+}
+
+
+
 useEffect(() => {
-
-
   setCurrentPath(location.pathname);
-}, [location]);
+}, [location.pathname]);
 
 
 
@@ -259,20 +275,13 @@ const onNavClick = (path: string) => {
             />
           </Search>
             </Box>
-<Box><IconButton size="large" aria-label="show 4 new mails" color="disabled">
-              <Badge badgeContent={4} color="error">
-                <ShoppingCartIcon />
+<Box><IconButton size="large" oaria-label="show 4 new mails" color="disabled">
+              <Badge badgeContent={CartState.length} color="error">
+                <ShoppingCartIcon onClick={() => hanndelCartClicke()}  />
               </Badge>
-            </IconButton></Box>
-          
-
+            </IconButton>
+            </Box>
           </Box>
-
-    
-        
-
-
-        
         </Toolbar>
       </Container>
     </AppBar>
