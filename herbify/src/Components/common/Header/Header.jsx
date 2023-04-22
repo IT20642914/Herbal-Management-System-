@@ -133,6 +133,9 @@ const onNavClick = (path: string) => {
     setAnchorElNav(event.currentTarget);
   };
 
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
   return (
     <Box>
@@ -186,6 +189,7 @@ const onNavClick = (path: string) => {
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
+              onClose={handleCloseNavMenu}
               anchorOrigin={{
                 vertical: 'bottom',
                 horizontal: 'left',
