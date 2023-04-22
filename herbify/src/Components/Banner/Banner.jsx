@@ -40,10 +40,14 @@ const Banner = () => {
     <Grid className={Styles.BannerGrid}>
       <Swiper
         loop={true}
-        slidesPerView={2}
+        slidesPerView={1}
         centeredSlides={false}
-        spaceBetween={20}
+        spaceBetween={10}
         grabCursor={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         modules={[Autoplay]}
         className="mySwiper"
       >

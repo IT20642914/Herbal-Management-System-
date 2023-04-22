@@ -4,7 +4,7 @@ import ProductLIts from '../common/ShoppingCart/ProductLIts'
 
 const HomePage = () => {
   return (
-    <div>Homepage
+    <div>
       <Banner/>
       <ProductLIts/>
     </div>
