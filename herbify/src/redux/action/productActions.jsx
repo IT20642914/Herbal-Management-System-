@@ -1,4 +1,4 @@
-import fakeStore from "../../Apis/fakeStore";
+// import fakeStore from "../../Apis/fakeStore";
 import { productActiontype } from "../actionTypes/productActionTypes";
 
 
