@@ -5,25 +5,20 @@ import { fetchProducts } from '../../../../redux/action/userAction';
 import { useSelector, useDispatch } from 'react-redux'
 import ProductCard from '../components/productCard/ProductCard';
 import { Grid } from '@mui/material';
-
+import ProductCard1 from '../components/productCard/ProductCardSwaper';
 import Styles from "./ProductList.module.scss"
+
 const ProductLIts = () => {
 
-  const products = useSelector((state: any) => state.allProducts)
-  console.log(products);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchProducts())//using thunk middleware
-  }, [dispatch]);
-  console.log("products :", products);
 
   return (
     <Grid className={Styles.ProductGrid}>
-
-      <ProductCard />
-
+      <Grid className={Styles.productGrid}></Grid>
+      <Grid className={Styles.productGrid1}> 
+       <ProductCard1/>
+      </Grid>
+    
+      <Grid className={Styles.productGrid}></Grid>
     </Grid>
   )
 }

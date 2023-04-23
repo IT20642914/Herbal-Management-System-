@@ -1,4 +1,28 @@
 .product{
-    background: green;
+    // background: green;
     margin-top: 3rem;
+     border-color:  green;
+}
+.CardMeadia{
+
+background-color: green;
+}
+.Card{
+    width: 100%;
+  border: 3px solid green;
+  border-radius: 4px;
+}
+  .CardButton {
+ color: white !important;
+
+  background: green !important;
+  text-align: center;
+  &:hover {
+    background: rgb(5, 190, 5) !important;
+  }
+}
+.ButtonBox{
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
 }
