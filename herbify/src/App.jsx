@@ -6,12 +6,14 @@ import  HomePage from './Components/HomePage/Homepage';
 import StorePage from './Components/StorePage/StorePage';
 import AbountPage from './Components/aboutPage/AbountPage';
 import { ToastContainer } from 'react-toastify';
-import ProductDetails from './Components/common/ShoppingCart/components/ProductDetails';
-import Cart from './Components/common/ShoppingCart/Cart';
+import ProductDetails from './Components/common/ShoppingCart/components/ProductDetails/ProductDetails';
+import Cart from './Components/common/ShoppingCart/Cart/Cart';
+import { CssBaseline } from '@mui/material'
 //import { useSelector } from 'react-redux'
 function App() {
   return (
     <Router>
+            <CssBaseline />
        <ToastContainer/>
     {/* <ScrollToTop /> */}
     <Routes>

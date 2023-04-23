@@ -14,8 +14,7 @@ export const headerNavigations = [
     selected: true,
   },
   { key: 2, name: 'About Us', path: '/about', selected: false },
-  { key: 3, name: 'Store', path: '/store', selected: false },
-  
+  { key: 3, name: 'Store', path: '/store', selected: false },  
 ];
 
 

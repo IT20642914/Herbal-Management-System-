@@ -20,7 +20,7 @@ import InputBase from '@mui/material/InputBase';
 //navigations
 import { headerNavigations } from '../../../constants/constants';
 import { styled, alpha } from '@mui/material/styles';
-
+import CssBaseline from '@mui/material/CssBaseline';
 import { useSelector } from "react-redux";
 
 
@@ -144,6 +144,7 @@ const onNavClick = (path: string) => {
 
   return (
     <Box>
+       <CssBaseline />
       <Box className={Styled.box}>
         <Typography className={Styled.boxText} > Get Your Herbales </Typography>
       </Box>

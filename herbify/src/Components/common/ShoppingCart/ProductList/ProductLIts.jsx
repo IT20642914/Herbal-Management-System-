@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 
-import { fetchProducts } from '../../../redux/action/userAction';
+import { fetchProducts } from '../../../../redux/action/userAction';
 
 import { useSelector, useDispatch } from 'react-redux'
-import ProductCard from './components/productCard/ProductCard';
+import ProductCard from '../components/productCard/ProductCard';
+import { Grid } from '@mui/material';
 
+import Styles from "./ProductList.module.scss"
 const ProductLIts = () => {
 
   const products = useSelector((state: any) => state.allProducts)
@@ -14,15 +16,15 @@ const ProductLIts = () => {
 
   useEffect(() => {
     dispatch(fetchProducts())//using thunk middleware
-
   }, [dispatch]);
   console.log("products :", products);
+
   return (
-    <div className=' ui grid container' >
+    <Grid className={Styles.ProductGrid}>
 
       <ProductCard />
 
-    </div>
+    </Grid>
   )
 }
 
