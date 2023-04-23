@@ -1,8 +1,12 @@
 import React from 'react'
-
+import { Grid } from '@mui/material'
+import ProductCard from '../common/ShoppingCart/components/productCard/ProductCard';
 const StorePage = () => {
   return (
-    <div>StorePage</div>
+<Grid>
+
+<ProductCard/>
+</Grid>
   )
 }
 

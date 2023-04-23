@@ -45,7 +45,7 @@ const Banner = () => {
           <SwiperSlide key={image.key} className="swipeSlider">
             <Card className="card">
               <CardContent className={Styles.CardContent}>
-                <CardMedia className={Styles.CardMedia}
+                <CardMedia style={{height: "100%", width: "100%", objectFit: "fill"}}   className={Styles.CardMedia }
                   component={LazyLoadImage}
     
                   image={image.img}
