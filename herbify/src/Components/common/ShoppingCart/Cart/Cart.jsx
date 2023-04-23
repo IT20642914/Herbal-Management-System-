@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { AddToCart, CartValueDescres, CartVluerIncrese, DeleteFromCart } from '../../../redux/action/productActions'
-
+import { AddToCart, CartValueDescres, CartVluerIncrese, DeleteFromCart } from '../../../../redux/action/productActions'
+import Styles from "./Cart.module.scss"
 const Cart = () => {
     const product = useSelector((state:any)=>state.cart )
     //const {title,price,category,image,description,rating} = product;

@@ -2,11 +2,11 @@ import { Link, useParams } from 'react-router-dom'
 
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
-import { AddToCart,  } from '../../../../redux/action/productActions';
+import { AddToCart,  } from '../../../../../redux/action/productActions';
 import { useSelector } from 'react-redux';
 import {  Button, Container, Row, Card, CardGroup, } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { fetchProduct } from '../../../../redux/action/userAction';
+import { fetchProduct } from '../../../../../redux/action/userAction';
 const ProductDetails = () => {
 
   const product = useSelector((state:any)=>state.product )

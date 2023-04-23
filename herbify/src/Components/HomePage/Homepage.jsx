@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from '../Banner/Banner'
-import ProductLIts from '../common/ShoppingCart/ProductLIts'
+import ProductLIts from '../common/ShoppingCart/ProductList/ProductLIts'
 
 const HomePage = () => {
   return (

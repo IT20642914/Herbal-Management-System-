@@ -26,6 +26,7 @@ const navItems = [
   { label: "Careers", path: "/careers" },
   { label: "Contact Us", path: "/contactus" },
 ];
+
 const Footer = () => {
 
 
@@ -33,6 +34,7 @@ const Footer = () => {
 
   return (
     <Box className={Styles.footer}>
+
       <Grid className={Styles.conatiner} container rowSpacing={1} columnSpacing={{ xs: 1,  }}>
         <Grid className={Styles.footercol1}>
           <Box className={Styles.logoBox}>
