@@ -1,10 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Button, Box, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Button, Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Styles from './productCard.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import "swiper/css/navigation";
+
+import { Pagination, Navigation } from "swiper";
 
 const ProductCard = () => {
   const products = useSelector((state: any) => state.allProducts.products);
@@ -35,10 +38,14 @@ const ProductCard = () => {
 
   return (
     <Swiper
-      slidesPerView={3}
-      spaceBetween={30}
-      pagination={{ clickable: true }}
-      className="mySwiper"
+    slidesPerView={6}
+    spaceBetween={30}
+    pagination={{
+        type: "bullets",
+      }}
+      navigation={true}
+      className={ Styles.mySwiper}
+      modules={[Pagination, Navigation]}  
     >
       {renderList}
     </Swiper>
