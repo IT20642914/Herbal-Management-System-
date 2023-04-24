@@ -11,22 +11,17 @@ import {
   ListItemText,
   Stack,
   TextField,
+  ListItemIcon,
   Typography,
 } from "@mui/material";
 import React from "react";
 import Styles from "./Footer.module.scss"
 import webLogo from "../../../assets/imgs/leave.png";
 import { useNavigate } from "react-router-dom";
-
-const navItems = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Services", path: "/services" },
-  { label: "Case Studies", path: "/casestudies" },
-  { label: "Careers", path: "/careers" },
-  { label: "Contact Us", path: "/contactus" },
-];
-
+import Facebook from '@mui/icons-material/Facebook'; // or any other social media icon
+import Instagram from '@mui/icons-material/Instagram';
+import Twitter from '@mui/icons-material/Twitter';
+import YouTube from '@mui/icons-material/YouTube';
 const Footer = () => {
 
 
@@ -74,27 +69,47 @@ const Footer = () => {
         <Grid className={Styles.footercol2}>
 
           <Grid className={Styles.footercol2inside}>  
-            <h4>Our Services</h4>
+            <h4>Categories</h4>
           <List  className={Styles.serviceLIst1}>
-            <Typography>Product Engineering</Typography>
-            <Typography>Software Development</Typography>
-            <Typography>Quality Engineering & Assurance</Typography>
-            <Typography>UI/UX Design</Typography>
-            <Typography>Data Analytics</Typography>
-            <Typography>Application Services</Typography>
+            <Typography>Supplements</Typography>
+            <Typography>Sports</Typography>
+            <Typography>Bath</Typography>
+            <Typography>Beauty</Typography>
+            <Typography>Grocery</Typography>
+            <Typography>Healthy Home</Typography>
           </List>
         </Grid>
         <Grid className={Styles.footercol2inside2}>
-        <h4>Quick Links</h4>
-          <List className={Styles.serviceLIst1}>
-            <Typography>Digital Transformation</Typography>
-            <Typography>Internet of Things</Typography>
-            <Typography>Mobile Applications</Typography>
-            <Typography>Business Consulting</Typography>
-            <Typography>Enterprise Resource Planning</Typography>
-            <Typography>Service for Telco Industry</Typography>
-          </List>
-        </Grid></Grid>
+  <h4>Social Links</h4>
+  <List className={Styles.serviceList1}>
+    <ListItem button>
+      <ListItemIcon>
+        <Facebook  className={Styles.socicallinks} />
+      </ListItemIcon>
+      <ListItemText className={Styles.socicallinks} primary="Facebook" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <Twitter className={Styles.socicallinks} />
+      </ListItemIcon>
+      <ListItemText className={Styles.socicallinks} primary="Twitter"/>
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon >
+        <Instagram  className={Styles.socicallinks}  />
+      </ListItemIcon>
+      <ListItemText  className={Styles.socicallinks} primary="Instagram" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon >
+        <YouTube  className={Styles.socicallinks}  />
+      </ListItemIcon>
+      <ListItemText  className={Styles.socicallinks} primary="YouTube" />
+    </ListItem>
+    
+    {/* Add more ListItems for additional social media links */}
+  </List>
+</Grid></Grid>
          
         <Grid className="footer-col4">
           <h4>Quick Links</h4>
@@ -103,21 +118,12 @@ const Footer = () => {
               <Link  underline="hover" className={Styles.linklist} href="/">Home</Link>
             </Typography>
             <Typography>
+              <Link  underline="hover" className={Styles.linklist} href="/store">Store</Link>
+            </Typography>
+            
+            <Typography>
               <Link   underline="hover"className={Styles.linklist} href="/about">About Us</Link>
             </Typography>
-            
-            <Typography>
-              <Link  underline="hover" className={Styles.linklist} href="/services">Services</Link>
-            </Typography>
-            
-            <Typography>
-              <Link underline="hover" className={Styles.linklist} href="/casestudies">Case Studies</Link>
-            </Typography>
-            
-            <Typography>
-              <Link  underline="hover" className={Styles.linklist} href="/careers">Careers</Link>
-            </Typography>
-            
             <Typography>
               <Link  underline="hover" className={Styles.linklist} href="/contactus">Contact Us</Link>
             </Typography>
