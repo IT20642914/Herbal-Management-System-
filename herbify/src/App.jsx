@@ -9,6 +9,9 @@ import { ToastContainer } from 'react-toastify';
 import ProductDetails from './Components/common/ShoppingCart/components/ProductDetails/ProductDetails';
 import Cart from './Components/common/ShoppingCart/Cart/Cart';
 import { CssBaseline } from '@mui/material'
+import Add from './Components/supplier/add/Add';
+import UpdateMyProducts from './Components/supplier/updateMyProducts/UpdateMyProducts';
+import MyProducts from './Components/supplier/myProducts/MyProducts';
 //import { useSelector } from 'react-redux'
 function App() {
   return (
@@ -32,6 +35,15 @@ function App() {
       </Route>
       <Route path='/' element={<PublicRoute />}>
         <Route path='/about' element={<AbountPage />} />
+      </Route>
+      <Route path='/' element={<PublicRoute />}>
+        <Route path='/addSellProduct' element={<Add />} />
+      </Route>
+      <Route path='/' element={<PublicRoute />}>
+        <Route path='/updateSellProduct' element={<UpdateMyProducts/>} />
+      </Route>
+      <Route path='/' element={<PublicRoute />}>
+        <Route path='/mySellProduct' element={<MyProducts/>} />
       </Route>
 
 
