@@ -1,6 +1,6 @@
 const router = require("express").Router();
 let Product = require("../models/add.model");
-import path from "path";
+
 
 //http://localhost:8070/product/addp
 router.route("/addp").post((req, res) => {
@@ -43,15 +43,18 @@ router.route("/addp").post((req, res) => {
 router.route("/").get((req, res) => {
 
     //uda hdpu const variable eka //me arrow function name eka api kmthi nmk
-    Showroomitem.find().then((Showroomitems) => {
+    Product.find().then((Products) => {
 
-        res.json(Showroomitems)
+        res.json(Products)
 
     }).catch((err) => {
         console.log(err)
     })
 
 })
+
+
+
 
 
 
@@ -62,7 +65,7 @@ router.route("/update/:cid").put(async (req, res) => {
 
 
     let showroomitemID = req.params.cid;  //backend eke indn ena kenage userid eka fetch krl gththa
-    //console.log("req "+JSON.stringify(req.file.filename)); //middel ware eken return wena file name eka api araganna eka
+    
   
     let  imageurl = null;
     if(req.file !== undefined){
@@ -71,8 +74,9 @@ router.route("/update/:cid").put(async (req, res) => {
          imageurl = req.body.itemurl;
     }
     
-    const {itemname, quntity, price, category } = req.body; //front end eke indala updat krnna oni data tika enwa object ekk widiht
-    //eka enne req.body eke.e tika wen krl api aluthin hdna variable wlt dgnnwa .me widiht kynwa destructure kyl.meka nthuwa add eke athule widihtath data tyagnna puluwn
+    const {itemname, quntity, price, category } = req.body; 
+    //******front end eke indala updat krnna oni data tika enwa object ekk widiht
+    //******eka enne req.body eke.e tika wen krl api aluthin hdna variable wlt dgnnwa .me widiht kynwa destructure kyl.meka nthuwa add eke athule widihtath data tyagnna puluwn
 
     const updateShowroomitem = {
         imageurl,
@@ -93,11 +97,19 @@ router.route("/update/:cid").put(async (req, res) => {
 })
 
 
+
+
+
+
+
+
+
+
 router.route("/delete/:id").delete(async (req, res) => {
-    let userId = req.params.id;
+    let pId = req.params.id;
     //model name
-    await Showroomitem.findByIdAndDelete(userId).then(() => {
-        res.status(200).send({ status: "item deleted" });
+    await Product.findByIdAndDelete(pId).then(() => {
+        res.status(200).send({ status: "product deleted" });
     }).catch((err) => {
         console.log(err.message);
         res.status(500).send({ status: "Error with delete user", error: err.message });
@@ -107,9 +119,9 @@ router.route("/delete/:id").delete(async (req, res) => {
 
 //get only one contactus details
 router.route("/get/:id").get(async (req, res) => {
-    let userId = req.params.id;
-    const user = await Showroomitem.findById(userId).then((showroomitem) => {
-        res.status(200).send({ status: "item fetched", showroomitem })//uda peliye contactus eka
+    let pID = req.params.id;
+    const product = await Product.findById(pID).then((Product) => {
+        res.status(200).send({ status: "item fetched", Product })//uda peliye contactus eka
     }).catch((err) => {
         console.log(err.message);
         res.status(500).send({ status: "Error with get user", error: err.message });
